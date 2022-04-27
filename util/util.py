@@ -42,7 +42,7 @@ def display_wordcloud(wordcloud: WordCloud) -> None:
     
     
 def display_sequence(sequence:List, limit = 10) -> None:
-    """Itterates through sequence, prints to user in specified format"""
+    """Itterates through sequence, prints to user"""
     for index, content in enumerate(sequence):
         if index >= limit:
             return
@@ -88,7 +88,7 @@ def resample_tomeklinks(X, y):
     return TomekLinks().fit_sample(X, y)
 
 
-def submit_test(tweetid:Series, predictions:Series) -> None:
+def submit_test(tweetid:List[int], predictions:List[int]) -> None:
     """DataFrame to Csv as specified for Kaggle submission"""
     submission = pd.DataFrame({'tweetid':tweetid,
                                'sentiment':predictions})
